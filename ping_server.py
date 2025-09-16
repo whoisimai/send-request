@@ -6,4 +6,5 @@ load_dotenv()
 
 url = os.getenv("SERVER_URL")
 
-print(f"Pinging {url}...")
+if not url:
+    print("SERVER_URL is not set in the environment variables.")
