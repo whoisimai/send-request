@@ -6,4 +6,23 @@ on:
     workflow_dispatch: # allows manual triggering of the workflow
 
 jobs:
-    
+    ping:
+     runs-on: ubuntu-latest
+     steps:
+        - name: Checkout Repo
+        uses: actions/checkout@v3
+
+        - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+            python-version: '3.x'
+
+        - name: Install requests
+        run: pip install requests
+
+
+        - name: Ping the server
+        env:
+            SERVER_URL: ${{ secrets.SERVER_URL }}
+        run: python ping_server.py
+            
