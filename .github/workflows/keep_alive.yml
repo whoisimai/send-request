@@ -1,28 +1,29 @@
 name: keep Render server alive
 
 on:
-    schedule:
-        - cron: "*/10 * * * *"  # every 10 minutes
-    workflow_dispatch: # allows manual triggering of the workflow
+  schedule:
+    - cron: "*/10 * * * *"  # every 10 minutes
+  workflow_dispatch: # allows manual triggering of the workflow
 
 jobs:
-    ping:
-     runs-on: ubuntu-latest
-     steps:
-        - name: Checkout Repo
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
         uses: actions/checkout@v3
-
-        - name: Set up Python
+        
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
             python-version: '3.x'
 
-        - name: Install requests
+      - name: Install requests
         run: pip install requests
 
-
-        - name: Ping the server
+      - name: Ping the server
+        run: |
+          echo "Pinging the server at $SERVER_URL"
+          python ping_server.py
         env:
             SERVER_URL: ${{ secrets.SERVER_URL }}
-        run: python ping_server.py
             
