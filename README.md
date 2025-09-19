@@ -14,5 +14,7 @@ git clone https://github.com/whoIsImai/send-request.git
 # Step 2: Navigate to the project directory.
 cd send-request
 
+# Step 3: Install the necessary dependencies.
+pip install requests
 
 ```
