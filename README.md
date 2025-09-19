@@ -26,3 +26,10 @@ cd send-request
 # Step 3: Install the necessary dependencies.
 pip install requests
 ```
+
+## GitHub Actions (optional, automated pings)
+
+### If you prefer automation, set up the GitHub Actions workflow:
+
+- Add your backend URL as a repository secret (SERVER_URL).
+- The workflow (.github/workflows/keep_alive.yml) will run every 10 minutes automatically.
