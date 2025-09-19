@@ -27,7 +27,7 @@ cd send-request
 pip install requests
 ```
 
-## GitHub Actions (optional, automated pings)
+## GitHub Actions (automated pings)
 
 ### If you prefer automation, set up the GitHub Actions workflow:
 
