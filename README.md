@@ -14,7 +14,7 @@ The only requirement is having Python & pip installed.
 - Manual trigger support via Run workflow button in GitHub.
 - Run locally or on GitHub Actions.
 
-For setup follow these steps:
+### For setup follow these steps:
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
