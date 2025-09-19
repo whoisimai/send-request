@@ -5,7 +5,16 @@ This repo is designed to help counter the cold start on render issue. Render's f
 
 The only requirement is having Python & pip installed.
 
-Follow these steps:
+## Features:
+
+- Automatic ping every 10 minutes (via GitHub Actions cron).
+- Secure secret storage for your backend URL.
+- Simple Python script using requests.
+- Logs success/failure of each request.
+- Manual trigger support via Run workflow button in GitHub.
+- Run locally or on GitHub Actions.
+
+For setup follow these steps:
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
@@ -16,5 +25,4 @@ cd send-request
 
 # Step 3: Install the necessary dependencies.
 pip install requests
-
 ```
