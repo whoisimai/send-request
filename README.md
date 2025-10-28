@@ -25,6 +25,11 @@ cd send-request
 
 # Step 3: Install the necessary dependencies.
 pip install requests
+
+# step 4: Add an environment varibale on GitHub
+SERVER_URL=url_here
+
+# step 5: Head to your actions tab on GitHub and run the workflow
 ```
 
 ## GitHub Actions (automated pings)
