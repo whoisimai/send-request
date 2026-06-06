@@ -1,7 +1,7 @@
 # Ping a server on Render
 ## Project Info:
 
-This repo is designed to help counter the cold start on render issue. Render's free tier server usually shuts down after 15 minutes of inactivity. How this repo works is it sends a request to the servers backend every 10 minutes and uses GitHub Action as an automated workflow with a cron job to send requests every 10 minutes.
+This repo is designed to help counter the cold start on render issue. Render's free tier server usually shuts down after 15 minutes of inactivity. How this repo works is it sends a request to the server backend every 10 minutes and uses GitHub Actions as an automated workflow with a cron job to send requests every 10 minutes.
 
 The only requirement is having Python & pip installed.
 
@@ -26,10 +26,11 @@ cd send-request
 # Step 3: Install the necessary dependencies.
 pip install requests
 
-# step 4: Add an environment varibale on GitHub
-SERVER_URL=url_here
+# Step 4: Add your backend URL as a GitHub secret.
 
-# step 5: Head to your actions tab on GitHub and run the workflow
+SERVER_URL=https://your-app.com/
+
+# Step 5: Head to your actions tab on GitHub and run the workflow
 ```
 
 ## GitHub Actions (automated pings)
@@ -38,3 +39,4 @@ SERVER_URL=url_here
 
 - Add your backend URL as a repository secret (SERVER_URL).
 - The workflow (.github/workflows/keep_alive.yml) will run every 10 minutes automatically.
+- Make sure the URL is a valid working endpoint that returns HTTP 200.
