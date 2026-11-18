@@ -11,6 +11,9 @@ The only requirement is having Python & pip installed.
 - Secure secret storage for your backend URL.
 - Simple Python script using requests.
 - Logs success/failure of each request.
+- Allows 10 seconds to connect and 90 seconds to wait for response data per attempt.
+- Retries timeouts, connection failures, and HTTP 502/503/504 responses up to
+  three total attempts, with 10 seconds between attempts, to accommodate cold starts.
 - Manual trigger support via Run workflow button in GitHub.
 - Run locally or on GitHub Actions.
 
