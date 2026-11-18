@@ -1,15 +1,21 @@
 import os
 import sys
+from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
+from dotenv import load_dotenv
 
 
 def validate_url(value: str) -> bool:
-    parsed = urlparse(value)
-    return bool(parsed.scheme and parsed.netloc)
+    try:
+        parsed = urlparse(value)
+        return bool(parsed.scheme and parsed.netloc)
+    except ValueError:
+        return False
 
 
+load_dotenv(Path(__file__).resolve().with_name(".env"), override=False)
 url = os.getenv("SERVER_URL")
 
 if not url:

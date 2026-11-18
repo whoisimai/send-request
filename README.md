@@ -24,7 +24,7 @@ git clone https://github.com/whoIsImai/send-request.git
 cd send-request
 
 # Step 3: Install the necessary dependencies.
-pip install requests
+pip install -r requirements.txt
 
 # Step 4: Add your backend URL as a GitHub secret.
 
@@ -32,6 +32,19 @@ SERVER_URL=https://your-app.com/
 
 # Step 5: Head to your actions tab on GitHub and run the workflow
 ```
+
+## Run locally
+
+Create a `.env` file next to `ping_server.py` containing:
+
+```dotenv
+SERVER_URL=https://your-app.com/
+```
+
+Then run `python ping_server.py`. The script loads this file automatically,
+including when launched from another directory. An existing `SERVER_URL`
+environment variable takes precedence over the `.env` value. The `.env` file
+is already ignored by Git.
 
 ## GitHub Actions (automated pings)
 
